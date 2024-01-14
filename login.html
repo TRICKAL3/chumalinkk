@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ChumaLink</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #071d42; /* Binance Blue */
+            color: #fff;
+            text-align: left;
+            padding: 15px;
+            border-bottom: 2px solid #00a0d8; /* Binance Light Blue */
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        section {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #071d42;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        button:hover {
+            background-color: #00a0d8; /* Binance Light Blue */
+        }
+
+        .toggle-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .toggle-link a {
+            text-decoration: underline;
+            color: #071d42;
+            cursor: pointer;
+        }
+
+        .password-rules {
+            font-size: 0.9em;
+            margin-top: 5px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>ChumaLink</h1>
+        <p>Setting Up Your ChumaLink Account.</p>
+    </header>
+
+    <!-- Login Form Section -->
+    <section>
+        <form id="loginForm" onsubmit="return validateSignIn()">
+            <label for="usernameSignIn">Username:</label>
+            <input type="text" id="usernameSignIn" name="usernameSignIn" required>
+
+            <label for="passwordSignIn">Password:</label>
+            <input type="password" id="passwordSignIn" name="passwordSignIn" required>
+
+            <button type="submit">Sign In</button>
+        </form>
+
+        <!-- Sign-Up Form Section -->
+        <form id="signupForm" onsubmit="return validateSignUp()" style="display: none;">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required>
+
+            <label for="usernameSignUp">Username:</label>
+            <input type="text" id="usernameSignUp" name="usernameSignUp" required>
+
+            <label for="passwordSignUp">Password:</label>
+            <input type="password" id="passwordSignUp" name="passwordSignUp" required>
+            <span class="password-rules">(At least 8 characters including uppercase, lowercase, number or symbol)</span>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <!-- Toggle Link -->
+        <div class="toggle-link">
+            <p>Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a></p>
+            <p>Already have an account? <a href="#" onclick="toggleForm()">Sign In</a></p>
+        </div>
+    </section>
+
+    <script>
+        function toggleForm() {
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+
+            if (loginForm.style.display === '' || loginForm.style.display === 'block') {
+                // Switch to Sign Up form
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+            } else {
+                // Switch to Sign In form
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+            }
+        }
+
+        function validateSignIn() {
+            // Add validation logic for Sign In if needed
+            redirectToDashboard();
+            return false; // Prevents the form from submitting (for demo purposes)
+        }
+
+        function validateSignUp() {
+            // Add validation logic for Sign Up if needed
+            redirectToDashboard();
+            return false; // Prevents the form from submitting (for demo purposes)
+        }
+
+        function redirectToDashboard() {
+            // For demo purposes, redirecting to dashboard.html after a short delay
+            setTimeout(function () {
+                window.location.href = 'dashboard.html';
+            }, 1000); // Adjust the delay as needed
+        }
+    </script>
+
+</body>
+</html>

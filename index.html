@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChumaLink - Your innovative payment Gateway to Digital Prosperity</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #071d42; /* Binance Blue */
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            border-bottom: 2px solid #00a0d8; /* Binance Light Blue */
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+        }
+
+        .menu-container {
+            position: relative;
+        }
+
+        .menu {
+            font-size: 1.5em;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 2;
+        }
+
+        nav {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 15px;
+            width: 150px;
+            background-color: #071d42;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color: #ffd700; /* Binance Yellow */
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #071d42;
+            border-bottom: 2px solid #071d42;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            text-transform: uppercase;
+        }
+
+        ul, ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .image-tile {
+            margin-bottom: 10px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-tile img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #071d42;
+            color: #fff;
+            padding: 10px;
+        }
+
+        #introduction {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #071d42;
+        }
+
+        #benefits {
+            background-color: #f8f8f8; /* Light Gray Background */
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="menu-container">
+            <span class="menu">&#9776;</span>
+            <nav>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">FAQ</a>
+            </nav>
+        </div>
+        <h1>ChumaLink</h1>
+        <p>Your innovative payment Gateway to Digital Prosperity</p>
+    </header>
+
+    <!-- Introduction Section -->
+    <section id="introduction">
+        <p>Linking the Future of Payments in Malawi, providing secure, fast, and accessible transactions. Join us on the journey to digital prosperity!</p>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits">
+        <h2>Benefits of Using ChumaLink</h2>
+        <ul>
+            <li>Secure and Fast Transactions</li>
+            <li>Low Transaction Fees</li>
+            <li>Global Accessibility</li>
+            <li>Easy Integration with E-commerce Platforms</li>
+            <!-- Add more benefits as needed -->
+        </ul>
+    </section>
+
+    <!-- Integration Guides Section -->
+    <section id="integration">
+        <h2>Operational How-Tos</h2>
+
+        <!-- Guide 1 with Image -->
+        <div class="image-tile">
+            <img src="g2.jpg" alt="Integration Guide 1" style="max-width: 100%;">
+        </div>
+        <p><strong><a href="login.html">Click here to get started</a></strong></p>
+        <p>Setting Up Your ChumaLink Account...</p>
+        <hr>
+
+        <!-- Guide 2 with Image -->
+        <div class="image-tile">
+            <img src="g1.jpg" alt="Integration Guide 2" style="max-width: 100%;">
+        </div>
+        <p><strong>Integrating ChumaLink with Your Website</strong></p>
+        <p>Learn how to seamlessly integrate ChumaLink with your website...</p>
+        <hr>
+
+        <!-- Guide 3 with Image -->
+        <div class="image-tile">
+            <img src="g3.jpg" alt="Integration Guide 3" style="max-width: 100%;">
+        </div>
+        <p><strong>Customizing Payment Options</strong></p>
+        <p>Customize payment options with these simple steps for Airtel Money, TNM Mpamba, National Bank, First Capital Bank, and Standard Bank...</p>
+        <!-- Add more integration guides as needed -->
+
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 ChumaLink. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Toggle navigation menu
+        document.querySelector('.menu').addEventListener('click', function () {
+            const nav = document.querySelector('nav');
+            nav.style.display = (getComputedStyle(nav).display === 'block') ? 'none' : 'block';
+        });
+    </script>
+
+</body>
+</html>

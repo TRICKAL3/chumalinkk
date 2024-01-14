@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChumaLink Dashboard</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #071d42; /* Binance Blue */
+            color: #fff;
+            text-align: left;
+            padding: 15px;
+            border-bottom: 2px solid #00a0d8; /* Binance Light Blue */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        button {
+            background-color: #071d42;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #00a0d8; /* Binance Light Blue */
+        }
+
+        .transaction-history {
+            margin-top: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #071d42;
+            color: #fff;
+        }
+
+        .services {
+            margin-top: 30px;
+        }
+
+        .service-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h2 {
+            color: #071d42;
+            margin-top: 0;
+        }
+
+        .images-section {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .images-section img {
+            width: calc(30% - 10px); /* Adjust the width as needed with margin in mind */
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .logout-button {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        /* Menu Icon Styles */
+        .menu {
+            font-size: 2em;
+            cursor: pointer;
+        }
+
+        /* Navigation Styles */
+        nav {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 150px;
+            background-color: #071d42;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color: #ffd700; /* Binance Yellow */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <span class="menu" onclick="toggleMenu()">&#9776;</span>
+        <h1>ChumaLink Dashboard</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav id="navigation">
+        <a href="#">Home</a>
+        <a href="#">Settings</a>
+    </nav>
+
+    <!-- Main Content Section -->
+    <section>
+        <p>Welcome to your ChumaLink Dashboard!</p>
+        <p>Explore and manage your transactions, account details, and more.</p>
+
+        <!-- Services Section -->
+        <div class="services">
+            <h2>Available Services</h2>
+            <div class="images-section">
+                <!-- Placeholder Image 1 -->
+                <img src="g4.jpg" alt="Image 1">
+                <!-- Pay Service Card -->
+                <div class="service-card">
+                    <h2>Pay</h2>
+                    <p>Send money securely and easily.</p>
+                    <button onclick="pay()">Pay Now</button>
+                </div>
+            </div>
+
+            <div class="images-section">
+                <!-- Placeholder Image 2 -->
+                <img src="g5.jpg" alt="Image 2">
+                <!-- Receive Payment Service Card -->
+                <div class="service-card">
+                    <h2>Receive Payment</h2>
+                    <p>Receive payments with ChumaLink.</p>
+                    <button onclick="receivePayment()">Receive Payment</button>
+                </div>
+            </div>
+
+            <div class="images-section">
+                <!-- Placeholder Image 3 -->
+                <img src="g6.jpg" alt="Image 3">
+                <!-- Create Invoices Service Card -->
+                <div class="service-card">
+                    <h2>Create Invoices</h2>
+                    <p>Generate and manage invoices for your business.</p>
+                    <button onclick="createInvoices()">Create Invoices</button>
+                </div>
+            </div>
+
+            <!-- Add more service cards as needed -->
+        </div>
+
+        <!-- Transaction History Table -->
+        <div class="transaction-history">
+            <h2>Transaction History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-01-20</td>
+                        <td>Online Purchase</td>
+                        <td>$50.00</td>
+                    </tr>
+                    <!-- Add more transaction rows as needed -->
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <!-- Logout Button Section -->
+    <div class="logout-button">
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        function logout() {
+            // For demo purposes, redirecting to login.html after a short delay
+            setTimeout(function () {
+                window.location.href = 'login.html';
+            }, 1000); // Adjust the delay as needed
+        }
+
+        function pay() {
+            // Add logic for the "Pay" service
+            alert('Initiate payment process...');
+        }
+
+        function receivePayment() {
+            // Add logic for the "Receive Payment" service
+            alert('Initiate receive payment process...');
+        }
+
+        function createInvoices() {
+            // Add logic for the "Create Invoices" service
+            alert('Initiate create invoices process...');
+        }
+
+        function toggleMenu() {
+            const nav = document.getElementById('navigation');
+            nav.style.display = (getComputedStyle(nav).display === 'block') ? 'none' : 'block';
+        }
+    </script>
+
+</body>
+</html>
